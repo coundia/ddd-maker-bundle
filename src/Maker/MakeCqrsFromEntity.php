@@ -36,7 +36,7 @@ class MakeCqrsFromEntity extends BaseMaker{
 	}
 
 	public static function getCommandDescription(): string{
-		return 'Generates a complete CRUD structure with CQRS Pattern.';
+		return 'Generates a complete Domain-Driven Design (DDD) structure following the CQRS pattern, including commands, queries, value objects, repositories, factories, mappers, domain events, exceptions, and more.';
 	}
 
 	public function configureCommand(

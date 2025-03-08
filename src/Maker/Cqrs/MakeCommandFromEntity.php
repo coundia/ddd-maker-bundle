@@ -27,7 +27,7 @@ class MakeCommandFromEntity extends BaseMaker
 
 	public static function getCommandDescription(): string
 	{
-		return 'Generates a command and its handler for an entity based on CQRS pattern.';
+		return 'Generates a command and its handler for a given entity using the CQRS pattern. The generated command can be used in a controller and includes integration tests.';
 	}
 
 	public function configureCommand(

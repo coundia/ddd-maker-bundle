@@ -23,7 +23,7 @@ class MakeQueryFromEntity extends BaseMaker
 
 	public static function getCommandDescription(): string
 	{
-		return 'Generates a query and its handler for an entity in src/<Entity>';
+		return 'Generates a query and its handler for a given entity using the CQRS pattern. The generated query can be used in a controller and includes integration tests.';
 	}
 
 	public function configureCommand(Command $command, InputConfiguration $inputConfig): void

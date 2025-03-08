@@ -1,19 +1,14 @@
-# ddd/Cqrs Maker Bundle
+# DDD/CQRS Maker Bundle
 
-A Symfony bundle that generates ddd code artifacts (commands, queries, handlers, Controllers, api docs, Tests etc.) from a entities. 
-This bundle provides console commands to quickly scaffold ddd classes for your Symfony projects.
+A Symfony bundle that automates the generation of Domain-Driven Design (DDD) code artifacts, including commands, queries, handlers, controllers, API documentation, tests, and more. This bundle provides console commands to quickly scaffold DDD classes for your Symfony projects, following the CQRS (Command Query Responsibility Segregation) pattern.
 
 ## Features
 
-- Generate Command and handlers from a given entity.
-- Generate Query and handlers from a given entity.
-- etc.. 
-
-`php bin/console list make`
-
-- (to see command prefix **ddd-**)
+- Generate **Commands** and **Handlers** from a given entity.
+- Generate **Queries** and **Handlers** from a given entity.
+- Generate **Repositories**, **Factories**, **Mappers**, **Value Objects**, and **Aggregates**.
+- Support for **Symfony Messenger** to handle DDD commands and queries.
 - Use skeleton templates to customize generated code.
-- Leverage Symfony Messenger for handling ddd commands and queries.
 - Easily integrate with any Symfony project.
 
 ## Installation
@@ -36,126 +31,83 @@ If you're developing locally, add a path repository in your project's `composer.
 }
 ```
 
-Then run 
+Then run:
 
-`composer require cnd/ddd-maker-bundle --dev`.
+```bash
+composer require cnd/ddd-maker-bundle --dev
+```
 
+### 2. Enable the Bundle
 
-If you are using Symfony Flex, the bundle is auto-registered. Otherwise, add the following to your config/bundles.php:
+If you are using Symfony Flex, the bundle is auto-registered. Otherwise, add the following to your `config/bundles.php`:
 
 ```php
 return [
-// ...
-Cnd\DddMakerBundle\DddMakerBundle::class => ['all' => true],
+    // ...
+    Cnd\DddMakerBundle\DddMakerBundle::class => ['all' => true],
 ];
-
 ```
-**Usage**
 
-Run the following command to generate a command class and handler for a given entity:
+## Usage
+
+Run the following command to see the available DDD generator commands:
 
 ```bash
-php bin/console make:cqrs-full YourEntity
-Or
-php bin/console make:cqrs-full "App\\Entity\\YourEntity"
-OR 
-
-e.g  php bin/console make:cqrs-full Transaction
-
-```
-nb: Transaction must exist  in "App\\Entity\\Transaction"
-
-Structure of generated code
-
-` tree -L 5 src`
+php bin/console list make
 ```
 
-bin/console make:ddd-full wallet
+### 1. Generate a Full CQRS Structure
 
-symfony-ddd-todo git:(main) ❯❯❯ tree -L 5 src
-src
-├── Core
-│   ├── Application
-│   │   ├── Command
-│   │   │   └── CreateWalletCommand.php
-│   │   ├── CommandHandler
-│   │   │   └── CreateWalletCommandHandler.php
-│   │   ├── DTO
-│   │   │   ├── WalletDTO.php
-│   │   │   ├── WalletRequestDTO.php
-│   │   │   └── WalletResponseDTO.php
-│   │   ├── Mapper
-│   │   │   └── Wallet
-│   │   │       ├── WalletMapper.php
-│   │   │       └── WalletMapperInterface.php
-│   │   ├── Query
-│   │   │   ├── FindByIdWalletQuery.php
-│   │   │   └── FindWalletPaginatedQuery.php
-│   │   ├── QueryHandler
-│   │   │   ├── FindByIdWalletQueryHandler.php
-│   │   │   └── FindWalletPaginatedQueryHandler.php
-│   │   └── Service
-│   │       ├── WalletCreate.php
-│   │       ├── WalletDelete.php
-│   │       ├── WalletFind.php
-│   │       └── WalletUpdate.php
-│   ├── Domain
-│   │   ├── Aggregate
-│   │   │   └── WalletModel.php
-│   │   ├── Event
-│   │   │   ├── WalletEventCreated.php
-│   │   │   ├── WalletEventDeleted.php
-│   │   │   └── WalletEventUpdated.php
-│   │   ├── Exception
-│   │   │   └── WalletException.php
-│   │   ├── Repository
-│   │   │   └── WalletRepositoryInterface.php
-│   │   ├── UseCase
-│   │   │   ├── WalletCreateInterface.php
-│   │   │   ├── WalletDeleteInterface.php
-│   │   │   ├── WalletFindInterface.php
-│   │   │   └── WalletUpdateInterface.php
-│   │   └── ValueObject
-│   │       ├── WalletBalance.php
-│   │       ├── WalletId.php
-│   │       ├── WalletPhoneNumber.php
-│   │       └── WalletProvider.php
-│   ├── Infrastructure
-│   │   ├── DataFixtures
-│   │   │   └── WalletFixtures.php
-│   │   ├── Factory
-│   │   │   └── WalletFactory.php
-│   │   ├── Persistence
-│   │   │   └── WalletRepository.php
-│   │   ├── Story
-│   │   │   └── WalletStory.php
-│   │   └── Voters
-│   │       └── WalletVoter.php
-│   └── Presentation
-│       └── Controller
-│           ├── CreateWalletController.php
-│           ├── FindByIdWalletController.php
-│           ├── FindWalletController.php
-│           ├── WalletBulkCreateController.php
-│           ├── WalletCreateController.php
-│           ├── WalletDeleteController.php
-│           ├── WalletListController.php
-│           └── WalletUpdateController.php
-├── Entity
-│   ├── Budget.php
-│   ├── Category.php
-│   ├── Transaction.php
-│   └── Wallet.php
+To generate a complete CQRS structure for an entity, use:
 
+```bash
+php bin/console make:ddd-full YourEntity
 ```
 
-Example of Query 
-```
-bin/console make:cqrs-query wallet find phoneNumber
+or specify the full namespace:
+
+```bash
+php bin/console make:ddd-full "App\\Entity\\YourEntity"
 ```
 
-Example of Command
+Example:
+
+```bash
+php bin/console make:ddd-full Transaction
 ```
-bin/console make:cqrs-command wallet update
+
+⚠️ **Note:** The entity must exist in `App\Entity\YourEntity`.
+
+### 2. Generate a Query
+
+To generate a query and its handler:
+
+```bash
+php bin/console make:cqrs-query YourEntity QueryName Parameter
 ```
+
+Example:
+
+```bash
+php bin/console make:cqrs-query Wallet Find phoneNumber
+```
+
+### 3. Generate a Command
+
+To generate a command and its handler:
+
+```bash
+php bin/console make:cqrs-command YourEntity Action
+```
+
+Example:
+
+```bash
+php bin/console make:cqrs-command Wallet Update
+```
+
+### 4. Inspect the Generated Code
+
+After running the commands, you can check the generated structure:
+
 
