@@ -1,0 +1,75 @@
+services:
+  Cnd\DddMakerBundle\:
+    resource: '../../*'
+    exclude: '../../{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+  Cnd\DddMakerBundle\Maker\MakeCqrsFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\MakeCrudFromEntity:
+    tags: [ 'maker.command' ]
+
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeDTOFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeCqrsSharedFiles:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeSetupCrudSharedFiles:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeFactoryFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeVoterFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeServicesFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeApiTest:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeValueObjectsDomain:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeDomainAggregate:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeDomainEvent:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeDomainException:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeDomaineUseCaseFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeMapper:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeControllersFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeCommandFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakePaginatedQueryFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeControllerForCommandCqrsFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeQueryFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeControllerForQueryCqrsFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeTestsQueryControllersFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeTestsPaginatedQueryControllersFromEntity:
+    tags: [ 'maker.command' ]
+

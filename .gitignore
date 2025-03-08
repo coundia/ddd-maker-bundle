@@ -1,0 +1,16 @@
+# Ignore vendor directory and generated files
+/vendor/
+/var/
+/build/
+/doc
+# Ignore IDE and system files
+/.idea/
+/.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+.private/
+.phpunit.cache

@@ -1,0 +1,33 @@
+{
+  "name": "cnd/ddd-maker-bundle",
+  "description": "A Symfony MakerBundle extension to generate DDD, Command and Query from an entity",
+  "type": "symfony-bundle",
+  "license": "CC-BY-NC-SA-4.0",
+  "autoload": {
+    "psr-4": {
+      "Cnd\\DddMakerBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cnd\\DddMakerBundle\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "symfony/framework-bundle": "^5.4 || ^6.0 || ^7.2",
+    "symfony/maker-bundle": "^1.41",
+    "ramsey/uuid": "^4.7"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^6.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "scripts": {
+    "test": "php vendor/bin/simple-phpunit"
+  }
+}
