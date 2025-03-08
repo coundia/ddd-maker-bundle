@@ -7,8 +7,11 @@ This bundle provides console commands to quickly scaffold ddd classes for your S
 
 - Generate Command and handlers from a given entity.
 - Generate Query and handlers from a given entity.
-- etc..
-- php bin/console list make (to see command prefix **ddd-**)
+- etc.. 
+
+`php bin/console list make`
+
+- (to see command prefix **ddd-**)
 - Use skeleton templates to customize generated code.
 - Leverage Symfony Messenger for handling ddd commands and queries.
 - Easily integrate with any Symfony project.
@@ -66,7 +69,7 @@ Structure of generated code
 
 ` tree -L 5 src`
 ```
-bin/console make:cqrs-full wallet
+
 bin/console make:ddd-full wallet
 
 symfony-ddd-todo git:(main) ❯❯❯ tree -L 5 src

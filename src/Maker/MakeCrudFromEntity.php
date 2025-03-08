@@ -32,7 +32,7 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class MakeCrudFromEntity extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:ddd-full';
+		return 'make:ddd-crud-full';
 	}
 
 	public static function getCommandDescription(): string{

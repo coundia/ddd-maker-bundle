@@ -8,68 +8,90 @@ services:
 
   Cnd\DddMakerBundle\Maker\MakeCrudFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeDTOFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeCqrsSharedFiles:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeSetupCrudSharedFiles:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeFactoryFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeVoterFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeServicesFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeApiTest:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeValueObjectsDomain:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeDomainAggregate:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeDomainEvent:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeDomainException:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeDomaineUseCaseFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeMapper:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\SubMaker\MakeControllersFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeCommandFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakePaginatedQueryFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeControllerForCommandCqrsFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeQueryFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeControllerForQueryCqrsFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeTestsQueryControllersFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeTestsPaginatedQueryControllersFromEntity:
     tags: [ 'maker.command' ]
+    enabled: false
 

@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 namespace App\Tests\Shared;
 
+/*
 use App\Security\Domain\Entity\User;
 use App\Security\Infrastructure\Factory\UserFactory;
+*/
 use App\Tests\Shared\Assertions\ResponseAssertions;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,7 +23,7 @@ abstract class BaseWebTestCase extends WebTestCase
 protected \Symfony\Bundle\FrameworkBundle\KernelBrowser $client;
 protected ?Response $response = null;
 protected ?string $token = null;
-protected ?User $user = null;
+//protected ?User $user = null;
 const API_VERSION = "v1";
 use ResponseAssertions;
 use Factories;
@@ -33,12 +35,15 @@ $this->client = static::createClient();
 $this->response = null;
 $email = faker()->email();
 $password = 'password';
+/*
 $user = UserFactory::createOne([
 'email' => $email,
 'password' => $password,
 ]);
+
 $this->token = $this->login($email, $password);
 $this->user = $user;
+*/
 }
 
 private function getDefaultHeaders(?array $headers = null): array
@@ -100,13 +105,10 @@ throw new \RuntimeException('Authentication token not found.');
 return $responseData['data']['token'];
 }
 
-/**
-* Get the current user.
-*
-* @return User
-*/
+/*
 protected function user(): User
 {
 return $this->user;
 }
+*/
 }

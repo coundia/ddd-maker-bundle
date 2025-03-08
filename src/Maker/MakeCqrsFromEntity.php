@@ -28,11 +28,11 @@ use Symfony\Component\Console\Input\InputOption;
 /**
  * Class MakeCqrsFromEntity
  *
- * Generates a complete CRUD structure with CQRS Pattern.
+ * Generates a complete DDD structure with CQRS Pattern.
  */
 class MakeCqrsFromEntity extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:cqrs-full';
+		return 'make:ddd-full';
 	}
 
 	public static function getCommandDescription(): string{

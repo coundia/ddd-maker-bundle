@@ -12,7 +12,8 @@ class <?= $class_name ?> extends <?= $base_test_case ?>
 {
 public function testUpdateEntity(): void
 {
-$user = $this->user();
+self::markTestSkipped("Fix assertions and enable the test");
+//$user = $this->user();
 
 $entity = <?= $entity_factory ?>::createOne([
 <?php foreach ($attributes as $attribute): ?>
