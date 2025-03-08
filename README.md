@@ -88,7 +88,7 @@ php bin/console make:ddd-command YourEntity Action
 
 After running the commands, you can check the generated structure:
 
-# EXAMPLE FOR Entity Waller
+# EXAMPLE FOR Entity Wallet 
 
 
 ## Create files (not overwrite)
