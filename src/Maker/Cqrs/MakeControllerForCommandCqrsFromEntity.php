@@ -15,7 +15,7 @@ use Symfony\Component\Console\Input\InputOption;
 class MakeControllerForCommandCqrsFromEntity extends BaseMaker{
 
 	public static function getCommandName(): string{
-		return 'make:cqrs-controller-command-from-entity';
+		return 'make:ddd-controller-command-from-entity';
 	}
 
 	public static function getCommandDescription(): string{

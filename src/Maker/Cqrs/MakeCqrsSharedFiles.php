@@ -17,7 +17,7 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class MakeCqrsSharedFiles extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:cqrs-setup';
+		return 'make:ddd-setup';
 	}
 
 	public static function getCommandDescription(): string{

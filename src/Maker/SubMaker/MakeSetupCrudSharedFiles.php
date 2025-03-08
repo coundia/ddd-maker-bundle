@@ -17,7 +17,7 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class MakeSetupCrudSharedFiles extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:ddd-setup';
+		return 'make:ddd-crud-setup';
 	}
 
 	public static function getCommandDescription(): string{

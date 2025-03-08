@@ -18,7 +18,7 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class MakeDomainEvent extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:ddd-domain-entity';
+		return 'make:ddd-domain-event-entity';
 	}
 
 	public static function getCommandDescription(): string{

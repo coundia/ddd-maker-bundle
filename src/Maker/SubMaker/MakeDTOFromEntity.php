@@ -20,7 +20,7 @@ class MakeDTOFromEntity extends BaseMaker{
 	const PREFIX_DIR = '\\';
 
 	public static function getCommandName(): string{
-		return 'make:ddd-dto';
+		return 'make:ddd-crud-dto';
 	}
 
 	public static function getCommandDescription(): string{

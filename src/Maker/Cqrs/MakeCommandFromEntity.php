@@ -22,7 +22,7 @@ class MakeCommandFromEntity extends BaseMaker
 	const PREFIX_DIR = '\\';
 	public static function getCommandName(): string
 	{
-		return 'make:cqrs-command-from-entity';
+		return 'make:ddd-command-from-entity';
 	}
 
 	public static function getCommandDescription(): string

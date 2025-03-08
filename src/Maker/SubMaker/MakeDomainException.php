@@ -17,7 +17,7 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class MakeDomainException extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:ddd-domain-entity';
+		return 'make:ddd-domain-exception-entity';
 	}
 
 	public static function getCommandDescription(): string{

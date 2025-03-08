@@ -18,7 +18,7 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class MakeDomainAggregate extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:ddd-domain-entity';
+		return 'make:ddd-domain-aggregate-entity';
 	}
 
 	public static function getCommandDescription(): string{

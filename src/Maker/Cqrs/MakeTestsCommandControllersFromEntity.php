@@ -14,7 +14,7 @@ use Symfony\Component\Console\Input\InputOption;
 class MakeTestsCommandControllersFromEntity extends BaseMaker{
 
 	public static function getCommandName(): string{
-		return 'make:cqrs-test-command-controller-from-entity';
+		return 'make:ddd-test-command-controller-from-entity';
 	}
 
 	public static function getCommandDescription(): string{

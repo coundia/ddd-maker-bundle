@@ -19,7 +19,7 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class MakeApiTest extends BaseMaker{
 	public static function getCommandName(): string{
-		return 'make:ddd-tests';
+		return 'make:ddd-crud-tests';
 	}
 
 	public static function getCommandDescription(): string{

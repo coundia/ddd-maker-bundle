@@ -15,7 +15,7 @@ use Symfony\Component\Console\Input\InputOption;
 class MakeControllerForPaginatedQueryCqrsFromEntity extends BaseMaker{
 
 	public static function getCommandName(): string{
-		return 'make:cqrs-controller-paginated-query-from-entity';
+		return 'make:ddd-controller-paginated-query-from-entity';
 	}
 
 	public static function getCommandDescription(): string{

@@ -18,7 +18,7 @@ class MakeQueryFromEntity extends BaseMaker
 
 	public static function getCommandName(): string
 	{
-		return 'make:cqrs-query-from-entity';
+		return 'make:ddd-query-from-entity';
 	}
 
 	public static function getCommandDescription(): string

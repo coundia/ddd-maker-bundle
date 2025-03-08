@@ -17,7 +17,7 @@ class MakePaginatedQueryFromEntity extends BaseMaker
 
 	public static function getCommandName(): string
 	{
-		return 'make:cqrs-paginated-query-from-entity';
+		return 'make:ddd-paginated-query-from-entity';
 	}
 
 	public static function getCommandDescription(): string

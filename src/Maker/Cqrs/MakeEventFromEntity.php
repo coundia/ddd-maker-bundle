@@ -17,7 +17,7 @@ class MakeEventFromEntity extends BaseMaker
 
 	public static function getCommandName(): string
 	{
-		return 'make:event-from-entity';
+		return 'make:ddd-event-from-entity';
 	}
 
 	public static function getCommandDescription(): string
