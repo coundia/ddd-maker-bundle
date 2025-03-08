@@ -5,3 +5,9 @@ services:
 
   Cnd\DddMakerBundle\Maker\MakeCqrsFromEntity:
     tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeQueryFromEntity:
+    tags: [ 'maker.command' ]
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeCommandFromEntity:
+    tags: [ 'maker.command' ]
