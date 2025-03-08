@@ -64,32 +64,16 @@ To generate a complete CQRS structure for an entity, use:
 php bin/console make:ddd-full YourEntity
 ```
 
-or specify the full namespace:
-
-```bash
-php bin/console make:ddd-full "App\\Entity\\YourEntity"
-```
-
-Example:
-
-```bash
-php bin/console make:ddd-full Transaction
-```
-
-⚠️ **Note:** The entity must exist in `App\Entity\YourEntity`.
+⚠️ **Note:** The entity must exist in `App\Entity\YourEntity` and have constructor and getters / setters.
 
 ### 2. Generate a Query
 
 To generate a query and its handler:
 
 ```bash
-php bin/console make:cqrs-query YourEntity QueryName Parameter
+php bin/console make:ddd-query YourEntity QueryName Parameter
 ```
 
-Example:
-
-```bash
-php bin/console make:cqrs-query Wallet Find phoneNumber
 ```
 
 ### 3. Generate a Command
@@ -97,17 +81,54 @@ php bin/console make:cqrs-query Wallet Find phoneNumber
 To generate a command and its handler:
 
 ```bash
-php bin/console make:cqrs-command YourEntity Action
-```
-
-Example:
-
-```bash
-php bin/console make:cqrs-command Wallet Update
+php bin/console make:ddd-command YourEntity Action
 ```
 
 ### 4. Inspect the Generated Code
 
 After running the commands, you can check the generated structure:
 
+# EXAMPLE FOR Entity Waller
 
+
+## Create files (not overwrite)
+```
+php bin/console make:ddd-full Wallet --force false
+``` 
+## Create files for Command
+```
+php bin/console make:ddd-command Wallet UpdatePhone 
+``` 
+1. created: src/Core/Application/Command/UpdatePhoneWalletCommand.php
+2. created: src/Core/Application/CommandHandler/UpdatePhoneWalletCommandHandler.php
+3. created: src/Core/Presentation/Controller/UpdatePhoneWalletController.php
+4. created: tests/Functional/Wallet/UpdatePhoneWalletCommandControllerTest.php
+
+- Custom it
+## Create files for Query
+```
+php bin/console make:ddd-query Wallet find phoneNumber
+``` 
+1. created: src/Core/Application/Query/FindByPhoneNumberWalletQuery.php
+2. created: src/Core/Application/QueryHandler/FindByPhoneNumberWalletQueryHandler.php
+3. created: src/Core/Presentation/Controller/FindByPhoneNumberWalletController.php
+4. created: tests/Functional/Wallet/FindByPhoneNumberWalletQueryControllerTest.php
+
+- Custom it
+
+# Api doc
+
+http://127.0.0.1:8000/api/docs
+
+### Run tests
+
+```
+php bin/phpunit
+```
+
+## remark (Requis)
+1. Only field in constructor is checked ,
+2. Add all setters and getters
+
+For plus
+[docs/usage.md](docs/usage.md)
