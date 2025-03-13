@@ -11,3 +11,7 @@ services:
 
   Cnd\DddMakerBundle\Maker\Cqrs\MakeCommandFromEntity:
     tags: [ 'maker.command' ]
+
+
+  Cnd\DddMakerBundle\Maker\Cqrs\MakeValueObjectsDomain:
+    tags: [ 'maker.command' ]
