@@ -130,5 +130,8 @@ php bin/phpunit
 1. Only field in constructor is checked ,
 2. Add all setters and getters
 
-For plus
+# For more 
 [docs/usage.md](docs/usage.md)
+
+# starter
+https://github.com/coundia/ddd-maker-bundler-starter
