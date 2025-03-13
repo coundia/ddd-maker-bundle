@@ -13,5 +13,5 @@ services:
     tags: [ 'maker.command' ]
 
 
-  Cnd\DddMakerBundle\Maker\Cqrs\MakeValueObjectsDomain:
+  Cnd\DddMakerBundle\Maker\SubMaker\MakeValueObjectsDomain:
     tags: [ 'maker.command' ]
